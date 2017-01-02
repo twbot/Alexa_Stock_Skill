@@ -154,9 +154,10 @@ def get_current_price(intent):
       		price = grab_data(get_current_price.__name__, ticker_code)
       		speech_output = "Current price for  " + ticker_name + " is: " + price
       		reprompt_text = ""
+      		should_end_session = True
 
 	return build_response(session_attributes, build_speechlet_response(
-        card_title, speech_output, reprompt_text, should_end_session))
+        	card_title, speech_output, reprompt_text, should_end_session))
 ##################################################################
 def get_high(intent):
 	session_attributes = {}
@@ -179,7 +180,7 @@ def get_high(intent):
       		reprompt_text = ""
 
 	return build_response(session_attributes, build_speechlet_response(
-        card_title, speech_output, reprompt_text, should_end_session))			
+        	card_title, speech_output, reprompt_text, should_end_session))			
 ##################################################################
 def get_low(intent):
 	session_attributes = {}
