@@ -178,6 +178,7 @@ def get_high(intent):
       		price = grab_data(get_high.__name__, ticker_code)
       		speech_output = "Stock high for " + ticker_name +  " is: " + price
       		reprompt_text = ""
+      		should_end_session = True
 
 	return build_response(session_attributes, build_speechlet_response(
         	card_title, speech_output, reprompt_text, should_end_session))			
@@ -201,7 +202,8 @@ def get_low(intent):
       		price = grab_data(get_low.__name__, ticker_code)
       		speech_output = "Stock low for " + ticker_name + " is: " + price
       		reprompt_text = ""
-
+      		should_end_session = True
+      		
 	return build_response(session_attributes, build_speechlet_response(
       	card_title, speech_output, reprompt_text, should_end_session))
 ##################################################################
